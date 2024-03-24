@@ -1,0 +1,353 @@
+body {
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #3a6186,
+    #89253e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186, #89253e);
+}
+
+h1 {
+  font-family: 'Oleo Script', cursive; /* Consistent with the section header */
+  color: #ffffff; /* Bright color for contrast against the gradient background */
+  font-size: 60px; /* Larger size for prominence */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+  margin-bottom: 20px; /* Spacing from the following content */
+}
+
+nav {
+  background-color: white;
+  height: 50px;
+  display: flex;
+}
+
+.section-header {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 50px; /* Slightly larger for distinction */
+  color: #fcc500; /* Keeping it consistent with existing style */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/*Contact sectiom*/
+.content-header {
+  font-family: 'Oleo Script', cursive;
+  color: #fcc500;
+  font-size: 45px;
+}
+
+.section-content {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Optional: adds a slight overlay effect on the background */
+  border-radius: 10px; /* Rounded corners for the content section */
+  margin: auto;
+  width: 70%;
+}
+select {
+  color: initial !important;
+}
+#contact {
+  font-family: 'Teko', sans-serif;
+  font-size: 12px;
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  color: #fff;
+  padding-bottom: 100px;
+}
+.contact-section {
+  font-family: --mantine-font-family-sans, 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  padding-top: 40px;
+}
+.contact-section .col-md-6 {
+  width: 50%;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section .col-md-6 {
+    width: 100%; /* Set width to 100% for smaller viewports */
+  }
+  .form-line {
+    border-right: none !important; /* Remove the border for smaller viewports */
+  }
+}
+
+.form-line {
+  border-right: 1px solid #b29999;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+label {
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control {
+  font-size: 1.3em;
+  color: #080808;
+}
+textarea.form-control {
+  height: 135px;
+  resize: none; /*disables the resize function*/
+  /* margin-top: px;*/
+}
+
+.submit {
+  float: right;
+  font-size: 1.1em;
+  background-color: #fcc500; /* Bright color for visibility */
+  color: #3a6186;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded corners for the button */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width: 125px;
+}
+
+.submit:hover {
+  background-color: #fff; /* Light color on hover */
+  color: #3a6186;
+  cursor: pointer;
+}
+
+.bottom-grid-container {
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.generate-phrase-grid {
+  background-color: white;
+  border-radius: 0.375rem;
+  display: flex;
+  flex-flow: column;
+  padding: 10px 10px 10px 20px;
+  overflow: scroll;
+}
+
+.grid-header {
+  width: 78%;
+  height: 30px;
+  transform: translate(14%, -50%);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #fff;
+}
+
+.grid-header-content {
+  flex: 1;
+}
+
+.grid-header-typingIn {
+  margin-left: 27px;
+}
+
+.translation-score {
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+}
+
+.lead-grid-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.error-message-topgrid {
+  display: flex;
+  color: white;
+  font-size: 13px;
+  padding-top: 2px;
+  text-align: center;
+}
+
+.lead-grid-textDisplay {
+  font-size: 13px;
+  padding-top: 6px;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: none;
+}
+
+.modal-header {
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+/*Makes the x button in the modals more to the left*/
+.m-606cb269 {
+  margin-right: 20px !important;
+}
+
+.no-flashcards-message {
+  font-size: 50px;
+  text-align: center;
+  padding-bottom: 45px;
+}
+
+.flashcard-container {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+.flashcard-tools {
+  position: absolute !important;
+  top: 10px !important; /* Adjust as needed for spacing from the top */
+  right: 10px !important; /* Adjust as needed for spacing from the right */
+  z-index: 100 !important;
+  /* Add any other styles for the button here */
+}
+
+/* Adjustments for larger screens */
+/*For some reason, this imported quizlet component does not allow for
+Adjusting a width based on viewport size*/
+@media (min-width: 768px) {
+  .flashcard-tools {
+    right: 4% !important;
+  }
+}
+
+@media (max-width: 935px) {
+  .flashcard {
+    width: 525px;
+  }
+}
+
+@media (max-width: 880px) {
+  .flashcard {
+    width: 475px;
+  }
+}
+
+@media (max-width: 796px) {
+  .flashcard-tools {
+    right: 5% !important;
+  }
+  .flashcard {
+    width: 400px;
+  }
+}
+
+@media (max-width: 675px) {
+  .flashcard {
+    width: 350px;
+  }
+}
+
+@media (max-width: 592px) {
+  .flashcard-tools {
+    right: 8% !important;
+  }
+  .flashcard {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .flashcard-tools {
+    right: 12% !important;
+  }
+  .flashcard {
+    width: 225px;
+  }
+  .section-content {
+    width: 90%;
+  }
+}
+
+.icon-edit {
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--mantine-color-gray-7);
+}
+
+.icon-edit:hover {
+  opacity: 0.7;
+}
+
+.icon-edit:active {
+  opacity: 0.5;
+}
+
+.flashcard-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  align-content: center;
+  margin: 0 auto; /* Centers the container horizontally */
+  margin-bottom: 80px;
+}
+
+.flashcard-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.flashcard-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.paper-flashcard {
+  margin-bottom: 20px;
+  border: 1px solid #ddd !important;
+  border-radius: 10px !important;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  width: 70% !important;
+  overflow: hidden !important;
+}
+
+.paper-flashcard-tools {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.paper-flashcard-tools.large {
+  height: 30px;
+}
+
+.paper-flashcard-tools.small {
+  height: 10px;
+}
+
+.paper-flashcard-front {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.paper-flashcard-back {
+  font-size: 14px;
+  word-wrap: break-word;
+}
