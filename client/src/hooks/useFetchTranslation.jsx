@@ -25,6 +25,7 @@ export function useFetchTranslation(text, targetLang, sourceLang, isSubmitted) {
     };
 
     async function fetchData() {
+      const baseUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL || 'http://localhost:3000';
       if (!text || sourceLang === targetLang) {
         setError(
           sourceLang === targetLang
@@ -44,7 +45,7 @@ export function useFetchTranslation(text, targetLang, sourceLang, isSubmitted) {
         setIsLoading(true);
         //fetches from server
         const response = await fetch(
-          `http://localhost:3000/translate?text=${encodeURIComponent(
+          `${baseUrl}/translate?text=${encodeURIComponent(
             text
           )}&targetLang=${encodeURIComponent(
             targetLang
