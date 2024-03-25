@@ -138,11 +138,12 @@ textarea.form-control {
 
 .generate-phrase-grid {
   background-color: white;
-  border-radius: 0.375rem;
+  border-radius: 0.45rem;
   display: flex;
   flex-flow: column;
   padding: 10px 10px 10px 20px;
   overflow: scroll;
+  height: auto;
 }
 
 .grid-header {
@@ -266,14 +267,12 @@ Adjusting a width based on viewport size*/
     height: auto;
     margin-left: 5px;
     transform: translate(14%, -5%);
-
   }
   .grid-header-typingIn {
     margin-left: 0;
   }
-  
+
   /* Remove margin from the last child to prevent extra space at the bottom */
-  
 }
 
 @media (max-width: 592px) {
@@ -296,7 +295,7 @@ Adjusting a width based on viewport size*/
     width: 90%;
   }
   .lead-grid-buttons {
-    flex-direction: column;
+    flex-wrap: wrap; /* This will make the buttons wrap to the next line */
   }
 }
 

@@ -49,7 +49,7 @@ export default function LeadGrid({
   return (
     <div
       className="generate-phrase-grid"
-      style={{ height: PRIMARY_COL_HEIGHT }}
+      style={{  }}
     >
       <LeadGridHeader />
       <ButtonGroup
