@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 
 /**
- * 
- * @param {*} text: text to be translated 
- * @param {*} targetLang: language to translate to 
- * @param {*} sourceLang: language to translate from 
+ *
+ * @param {*} text: text to be translated
+ * @param {*} targetLang: language to translate to
+ * @param {*} sourceLang: language to translate from
  * @param {*} isSubmitted: boolean that changes based on user events. This is used
- * in useEffect hook to trigger the fetch request. 
+ * in useEffect hook to trigger the fetch request.
  */
 export function useFetchTranslation(text, targetLang, sourceLang, isSubmitted) {
   const [error, setError] = useState('');
@@ -25,7 +25,9 @@ export function useFetchTranslation(text, targetLang, sourceLang, isSubmitted) {
     };
 
     async function fetchData() {
-      const baseUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL || 'http://localhost:3000';
+      let baseUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL || 'http://localhost:3000';
+      // Ensure baseUrl does not end with a slash
+      baseUrl = baseUrl.replace(/\/+$/, '');
       if (!text || sourceLang === targetLang) {
         setError(
           sourceLang === targetLang
