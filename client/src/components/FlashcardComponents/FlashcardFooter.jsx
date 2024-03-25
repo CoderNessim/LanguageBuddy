@@ -7,7 +7,7 @@ import React from 'react';
 import FlashcardPaper from './FlashcardPaper';
 /**
  * @returns the bottom part of the flashcard carousel
- * includes navigation tools and a button to view all flashcards 
+ * includes navigation tools and a button to view all flashcards
  */
 export default function FlashcardFooter({
   flashCards,
@@ -18,7 +18,7 @@ export default function FlashcardFooter({
   setFlashCards,
 }) {
   const [opened, { open, close }] = useDisclosure(false);
-
+  
   return (
     <div className="flashcard-footer">
       <div className="flashcard-footer-wrapper">

@@ -22,7 +22,7 @@ export default function Select({
   return (
     <div className="form-group">
       <label htmlFor="from">{text}</label>
-      <select name="from" value={language} onChange={handleLanguageChange}>
+      <select name="from" value={language} onChange={handleLanguageChange} className='select-language'>
         {SUPPORTED_LANGUAGES.map((language, i) => (
           <option
             key={i}

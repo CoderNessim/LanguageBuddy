@@ -89,6 +89,10 @@ select {
 .form-group {
   margin-top: 10px;
 }
+.select-language {
+  margin-left: 5px;
+}
+
 label {
   font-size: 1.3em;
   line-height: 1em;
@@ -257,6 +261,19 @@ Adjusting a width based on viewport size*/
   .flashcard {
     width: 350px;
   }
+  .grid-header {
+    flex-direction: column;
+    height: auto;
+    margin-left: 5px;
+    transform: translate(14%, -5%);
+
+  }
+  .grid-header-typingIn {
+    margin-left: 0;
+  }
+  
+  /* Remove margin from the last child to prevent extra space at the bottom */
+  
 }
 
 @media (max-width: 592px) {
@@ -277,6 +294,9 @@ Adjusting a width based on viewport size*/
   }
   .section-content {
     width: 90%;
+  }
+  .lead-grid-buttons {
+    flex-direction: column;
   }
 }
 
