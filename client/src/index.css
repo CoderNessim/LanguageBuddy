@@ -239,13 +239,13 @@ Adjusting a width based on viewport size*/
 
 @media (max-width: 935px) {
   .flashcard {
-    width: 525px;
+    width: 525px !important;
   }
 }
 
 @media (max-width: 880px) {
   .flashcard {
-    width: 475px;
+    width: 475px !important;
   }
 }
 
@@ -254,13 +254,13 @@ Adjusting a width based on viewport size*/
     right: 5% !important;
   }
   .flashcard {
-    width: 400px;
+    width: 400px !important;
   }
 }
 
 @media (max-width: 675px) {
   .flashcard {
-    width: 350px;
+    width: 350px !important;
   }
   .grid-header {
     flex-direction: column;
@@ -280,7 +280,7 @@ Adjusting a width based on viewport size*/
     right: 8% !important;
   }
   .flashcard {
-    width: 300px;
+    width: 300px !important;
   }
 }
 
@@ -289,10 +289,10 @@ Adjusting a width based on viewport size*/
     right: 12% !important;
   }
   .flashcard {
-    width: 225px;
+    width: 225px !important;
   }
   .section-content {
-    width: 90%;
+    width: 90% !important;
   }
   .lead-grid-buttons {
     flex-wrap: wrap; /* This will make the buttons wrap to the next line */
