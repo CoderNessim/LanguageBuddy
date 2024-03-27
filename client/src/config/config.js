@@ -141,8 +141,8 @@ export const SUPPORTED_LANGUAGES = [
     supports_formality: true,
   },
   {
-    language: 'PT-BR',
-    name: 'Portuguese BR',
+    language: 'PT',
+    name: 'Portuguese',
     supports_formality: true,
   },
   {
