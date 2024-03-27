@@ -9,9 +9,11 @@ export default function TranslatedFrom({
   setText,
   languageFrom,
   setLanguageFrom,
+  setTranslatedText
 }) {
   function onLanguageFrom(e) {
     setLanguageFrom(e.target.value);
+    setTranslatedText('');
   }
 
   function onText(e) {

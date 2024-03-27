@@ -83,5 +83,5 @@ export function useFetchTranslation(text, targetLang, sourceLang, isSubmitted) {
     setError('');
   }, [targetLang, sourceLang, translatedText]);
 
-  return { error, isLoading, translatedText };
+  return { error, isLoading, translatedText, setTranslatedText };
 }

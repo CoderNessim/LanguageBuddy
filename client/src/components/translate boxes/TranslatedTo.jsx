@@ -10,9 +10,11 @@ export default function TranslatedTo({
   translatedText,
   isLoading,
   error,
+  setTranslatedText
 }) {
   function onLanguageTo(e) {
     setLanguageTo(e.target.value);
+    setTranslatedText('');  
   }
   return (
     <div className="col-md-6">

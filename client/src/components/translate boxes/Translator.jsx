@@ -16,7 +16,7 @@ export default function Translator() {
   const [text, setText] = useState('');
   const [languageFrom, setLanguageFrom] = useState('EN');
   const [languageTo, setLanguageTo] = useState('ES');
-  const { error, isLoading, translatedText } = useFetchTranslation(
+  const { error, isLoading, translatedText, setTranslatedText } = useFetchTranslation(
     text,
     languageTo,
     languageFrom,
@@ -31,6 +31,7 @@ export default function Translator() {
           setText={setText}
           languageFrom={languageFrom}
           setLanguageFrom={setLanguageFrom}
+          setTranslatedText={setTranslatedText}
         ></TranslatedFrom>
         <TranslatedTo
           languageTo={languageTo}
@@ -38,6 +39,7 @@ export default function Translator() {
           translatedText={translatedText}
           isLoading={isLoading}
           error={error}
+          setTranslatedText={setTranslatedText}
         >
           <Button
             text={
