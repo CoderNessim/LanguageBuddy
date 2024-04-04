@@ -22,7 +22,7 @@ export default function FlashcardPaper({
     >
       <div
         className={`paper-flashcard-tools ${
-          flashCards[index].frontHTML.length > 75 ? 'large' : 'small'
+          flashCards[index].frontHTML.length > 15 ? 'medium' : 'small'
         }`}
       >
         <FlashcardTools

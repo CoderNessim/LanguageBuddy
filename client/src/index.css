@@ -8,6 +8,10 @@ body {
   background: linear-gradient(to left, #3a6186, #89253e);
 }
 
+.all-flashcards-background {
+  background: white !important;
+}
+
 h1 {
   font-family: 'Oleo Script', cursive; /* Consistent with the section header */
   color: #ffffff; /* Bright color for contrast against the gradient background */
@@ -16,7 +20,15 @@ h1 {
   margin-bottom: 20px; /* Spacing from the following content */
 }
 
-nav {
+/* .all-flashcards-h1 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  color: black;
+  text-shadow: none;
+  font-size: 37px;
+} */
+
+.nav {
   background-color: white;
   height: 50px;
   display: flex;
@@ -334,6 +346,13 @@ Adjusting a width based on viewport size*/
   justify-content: space-between;
   width: 100%;
 }
+
+.all-flashcards-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 .paper-flashcard {
   margin-bottom: 20px;

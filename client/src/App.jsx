@@ -1,20 +1,55 @@
-import Translator from './components/translate boxes/Translator';
-import CustomGrid from './components/CustomGrid/CustomGrid';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import FlashcardCarousel from './components/FlashcardComponents/FlashcardCarousel';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotFound from './components/pages/NotFound';
+import AppHomePage from './components/pages/AppHomePage';
+import AllFlashcardsPage from './components/pages/AllFlashcardsPage';
+import { useState } from 'react';
 
 function App() {
   const [flashCards, setFlashCards] = useLocalStorage([], 'flashCards');
+  const [currentFlashcardIndex, setCurrentFlashcardIndex] = useState(0);
+
+  function handleDelete(cardId) {
+    const newFlashCards = flashCards
+      .filter((card) => card.id !== cardId)
+      .sort((a, b) => a.id - b.id);
+    setFlashCards(newFlashCards);
+
+    if (currentFlashcardIndex === flashCards.length - 1) {
+      setCurrentFlashcardIndex((prev) => prev - 1);
+    }
+  }
 
   return (
     <>
-      <Translator />
-      <CustomGrid flashCards={flashCards} setFlashCards={setFlashCards} />
-      <br />
-      <FlashcardCarousel
-        flashCards={flashCards}
-        setFlashCards={setFlashCards}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            index
+            element={
+              <AppHomePage
+                flashCards={flashCards}
+                setFlashCards={setFlashCards}
+                currentFlashcardIndex={currentFlashcardIndex}
+                setCurrentFlashcardIndex={setCurrentFlashcardIndex}
+                handleDelete={handleDelete}
+              />
+            }
+          />
+          <Route
+            path="allflashcards"
+            element={
+              <AllFlashcardsPage
+                flashCards={flashCards}
+                setFlashCards={setFlashCards}
+                handleDelete={handleDelete}
+                setCurrentFlashcardIndex={setCurrentFlashcardIndex}
+              />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
