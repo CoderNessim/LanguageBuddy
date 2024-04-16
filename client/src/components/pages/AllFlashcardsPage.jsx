@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
 import FlashcardPaper from '../FlashcardComponents/FlashcardPaper';
 import ViewAllHeader from '../FlashcardComponents/ViewAllHeader';
+import { useFlashcards } from '../../contexts/FlashcardContext';
 
-function AllFlashcardsPage({
-  flashCards,
-  setFlashCards,
-  handleDelete,
-  setCurrentFlashcardIndex,
-}) {
+function AllFlashcardsPage() {
+  const { flashcards, setCurrentFlashcardIndex } = useFlashcards();
 
   useEffect(() => {
     document.body.classList.add('all-flashcards-background');
@@ -23,13 +20,10 @@ function AllFlashcardsPage({
     <div style={{ padding: '20px' }}>
       <ViewAllHeader />
       <div className="flashcards-content">
-        {flashCards.map((card, index) => (
+        {flashcards.map((card, index) => (
           <FlashcardPaper
-            flashCards={flashCards}
             index={index}
             card={card}
-            handleDelete={handleDelete}
-            setFlashCards={setFlashCards}
             key={index}
           />
         ))}

@@ -2,6 +2,7 @@ import { Carousel } from '@mantine/carousel';
 import FlashcardFooter from './FlashcardFooter';
 import { useEmbla } from '../../hooks/useEmbla';
 import CustomFlashcard from './CustomFlashcard';
+import { useFlashcards } from '../../contexts/FlashcardContext';
 
 /**
  * @returns a component containing all components needed for the flashcard carousel
@@ -9,17 +10,19 @@ import CustomFlashcard from './CustomFlashcard';
 export default function FlashcardCarousel({
   flashCards,
   setFlashCards,
-  currentFlashcardIndex,
-  setCurrentFlashcardIndex,
   handleDelete,
 }) {
+
+  const { flashcards, currentFlashcardIndex, setCurrentFlashcardIndex } = useFlashcards();
+
   const { setEmbla, handleNext, handlePrev } = useEmbla(
-    flashCards,
+    flashcards,
     currentFlashcardIndex,
     setCurrentFlashcardIndex
   );
 
-  return flashCards.length > 0 ? (
+
+  return flashcards.length > 0 ? (
     <>
       <div className="flashcard-container">
         <Carousel
@@ -29,7 +32,7 @@ export default function FlashcardCarousel({
           getEmblaApi={setEmbla}
           withKeyboardEvents={false}
         >
-          {flashCards.map((card, i) => {
+          {flashcards.map((card, i) => {
             return (
               <Carousel.Slide key={i}>
                 <CustomFlashcard

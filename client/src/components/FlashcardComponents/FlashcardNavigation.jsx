@@ -1,14 +1,16 @@
 import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
+import { useFlashcards } from '../../contexts/FlashcardContext';
 
 /**
  * @returns arrow keys and flashcard number for navigation
  */
 export default function FlashcardNavigation({
   handlePrev,
-  currentFlashcardIndex,
-  flashCards,
   handleNext,
 }) {
+
+  const { flashcards, currentFlashcardIndex } = useFlashcards();
+
   return (
     <div className="flashcard-navigation">
       <IconArrowLeft
@@ -16,7 +18,7 @@ export default function FlashcardNavigation({
         onClick={handlePrev}
       />
       <span style={{ fontSize: '13.5px', color: 'white' }}>
-        {currentFlashcardIndex + 1}/{flashCards.length}
+        {currentFlashcardIndex + 1}/{flashcards.length}
       </span>
       <IconArrowRight
         style={{ cursor: 'pointer', color: 'white' }}

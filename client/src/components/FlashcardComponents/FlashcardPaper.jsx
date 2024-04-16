@@ -1,17 +1,17 @@
 import { Paper, Divider } from '@mantine/core';
 import FlashcardTools from './FlashcardTools';
+import { useFlashcards } from '../../contexts/FlashcardContext';
 
 /**
  * @returns a paper component from mantine
  * this paper component holds the front and back of the flashcard when viewing all flashcards
  */
 export default function FlashcardPaper({
-  flashCards,
   index,
   card,
-  handleDelete,
-  setFlashCards,
 }) {
+  const { flashcards, handleDelete } = useFlashcards();
+
   return (
     <Paper
       shadow="xs"
@@ -22,15 +22,13 @@ export default function FlashcardPaper({
     >
       <div
         className={`paper-flashcard-tools ${
-          flashCards[index].frontHTML.length > 15 ? 'medium' : 'small'
+          flashcards[index].frontHTML.length > 15 ? 'medium' : 'small'
         }`}
       >
         <FlashcardTools
-          handleDelete={() => handleDelete(flashCards[index].id)}
+          handleDelete={() => handleDelete(flashcards[index].id)}
           text={card.frontHTML}
-          translatedText={card.backHTML}
-          setFlashCards={setFlashCards}
-          index={index}
+          translatedText={card.backHTML}          index={index}
           className=""
         />
       </div>

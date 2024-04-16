@@ -12,7 +12,7 @@ import BottomGridGroup from './BottomGridGroup';
 /**
  * @returns component holding all components needed for the custom grid
  */
-export default function CustomGrid({ flashCards, setFlashCards }) {
+export default function CustomGrid() {
   const [text, setText] = useState('');
   const [isTranslationSubmitted, setIsTranslationSubmitted] = useState(false);
   const [numWords, setNumWords] = useState(0);
@@ -98,8 +98,7 @@ export default function CustomGrid({ flashCards, setFlashCards }) {
               setShowTranslation={setShowTranslation}
               sentence={sentence}
               translatedText={translatedText}
-              flashCards={flashCards}
-              setFlashCards={setFlashCards}
+             
             />
           </Grid>
         </SimpleGrid>

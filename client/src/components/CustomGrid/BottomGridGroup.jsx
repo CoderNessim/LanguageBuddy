@@ -2,6 +2,7 @@ import BottomGrid from './BottomGrid';
 import SimilarityScore from './SimilarityScore';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import Button from '../Button';
+import { useFlashcards } from '../../contexts/FlashcardContext';
 
 /**
  * @summary This component is a group of two BottomGrid components
@@ -15,12 +16,11 @@ export default function BottomGridGroup({
   setShowTranslation,
   sentence,
   translatedText,
-  flashCards,
-  setFlashCards
 }) {
-  
+  const { setFlashcards } = useFlashcards();
+
   function onCreate(modalFlashcardText, modalFlashcardTranslation) {
-    setFlashCards((prev) => [
+    setFlashcards((prev) => [
       ...prev,
       {
         id: Date.now(),
@@ -55,7 +55,6 @@ export default function BottomGridGroup({
               text={sentence}
               translatedText={translatedText}
               setIsTranslationSubmitted={setIsTranslationSubmitted}
-              flashCards={flashCards}
               title="Flashcard Maker"
               buttonText="Create"
               openModalButton={<Button text="Make a flashcard"></Button>}
